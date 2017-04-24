@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Bibliotecarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Puesto</th>
+      <th>Estado</th>
+      <th>Certificaciones</th>
+      <th>Nivel Academico</th>
+      <th>Experiencia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.name %></td>
+        <td><%= doctor.address %></td>
+        <td><%= doctor.city %></td>
+        <td><%= doctor.state %></td>
+        <td><%= doctor.zip %></td>
+        <td><%= doctor.certified_by %></td>
+        <td><%= doctor.experience %></td>
+        <td><%= link_to 'Ver', doctor%></td>
+        <td><%= link_to 'Editar', edit_doctor_path(doctor) %></td>
+        <td><%= link_to 'Eliminar', doctor, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Bibliotecario', new_doctor_path %>

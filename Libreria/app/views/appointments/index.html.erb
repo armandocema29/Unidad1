@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Rentas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre Libro</th>
+      <th>Nombre Bibliotecario</th>
+      <th>Razón</th>
+      <th>Fecha de Cita</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= Pet.get_name(appointment.pet_id) %></td>
+        <td><%= Doctor.get_name(appointment.doctor_id) %></td>
+        <td><%= appointment.doctor_name %></td>
+        <td><%= appointment.reason %></td>
+        <td><%= appointment.appointment_date %></td>
+
+        <td><%= link_to 'Ver', appointment %></td>
+        <td><%= link_to 'Editar', edit_appointment_path(appointment) %></td>
+        <td><%= link_to 'Eliminar', appointment, method: :delete, data: { confirm: 'Estas Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Renta', new_appointment_path %>
