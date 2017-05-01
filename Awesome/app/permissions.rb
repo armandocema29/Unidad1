@@ -26,8 +26,8 @@ class Role
   end
 end
 
-admin_personal_info = {'name'=>'Valentin', 'last_name'=>'Romero', 'birth_year'=>1995}
-admin_contact_info = {'email'=>'valedor_10@hotmail.com', 'mob'=>'4181224590'}
+admin_personal_info = {'name'=>'Armando', 'last_name'=>'Cervantes', 'birth_year'=>1995}
+admin_contact_info = {'email'=>'arcema29@gmail.com', 'mob'=>'4181031678'}
 admin_role = Role.new('users','contacts','promotions')
 admin = User.new(admin_personal_info, admin_contact_info, admin_role)
 
